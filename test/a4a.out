@@ -1,0 +1,84 @@
+parameters read 
+parameters read 
+parameters read 
+parameters read 
+ions read 
+ions read 
+relaxparameters read 
+relaxparameters read 
+ions read 
+relaxparameters read 
+ions read 
+relaxparameters read 
+done1 
+done1 
+done1 
+done1 
+done2 
+done2 
+done2 
+done2 
+done3 
+done3 
+done3 
+done3 
+Spline fit done 
+Spline fit done 
+Spline fit done 
+Spline fit done 
+Nonlocal coeff done 
+Nonlocal coeff done 
+Nonlocal coeff done 
+Pseudocharge cutoff calculation done
+supercell createdNonlocal index done 
+at=0, start=0, end=4 
+rank=2, pLsdft->AtomOverlap_local[0].Natoms=68 
+done influencing atoms local
+done influencing atoms nonlocal
+ok1
+ok2
+ok3
+Nonlocal coeff done 
+Pseudocharge cutoff calculation done
+supercell createdNonlocal index done 
+at=0, start=0, end=4 
+rank=1, pLsdft->AtomOverlap_local[0].Natoms=68 
+done influencing atoms local
+done influencing atoms nonlocal
+ok1
+ok2
+ok3
+Pseudocharge cutoff calculation done
+supercell createdNonlocal index done 
+at=0, start=0, end=4 
+rank=0, pLsdft->AtomOverlap_local[0].Natoms=68 
+done influencing atoms local
+done influencing atoms nonlocal
+ok1
+ok2
+ok3
+Pseudocharge cutoff calculation done
+supercell createdNonlocal index done 
+at=0, start=0, end=4 
+rank=3, pLsdft->AtomOverlap_local[0].Natoms=68 
+done influencing atoms local
+done influencing atoms nonlocal
+ok1
+ok2
+ok3
+Nonlocal projectors calculated
+rank=2, number of FD points=792 
+Nonlocal projectors calculated
+rank=1, number of FD points=891 
+Nonlocal projectors calculated
+rank=0, number of FD points=891 
+Nonlocal projectors calculated
+rank=3, number of FD points=792 
+rank=2, Total time spent=34.820516 
+rank=3, Total time spent=35.405144 
+rank=0, Total time spent=38.690480 
+rank=1, Total time spent=39.072115 
+Done LSSGQ 
+Done LSSGQ 
+Done LSSGQ 
+Done LSSGQ 

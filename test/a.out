@@ -1,0 +1,19 @@
+parameters read 
+ions read 
+relaxparameters read 
+done1 
+done2 
+done3 
+Spline fit done 
+Nonlocal coeff done 
+Pseudocharge cutoff calculation done
+supercell createdNonlocal index done 
+at=0, start=0, end=4 
+rank=0, pLsdft->AtomOverlap_local[0].Natoms=115 
+done influencing atoms local
+done influencing atoms nonlocal
+ok1
+ok2
+ok3
+Nonlocal projectors calculated
+Done LSSGQ

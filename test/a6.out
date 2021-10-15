@@ -1,0 +1,26 @@
+parameters read 
+parameters read 
+parameters read 
+parameters read 
+parameters read 
+parameters read 
+ions read 
+ions read 
+ions read 
+ions read 
+relaxparameters read 
+relaxparameters read 
+relaxparameters read 
+ions read 
+relaxparameters read 
+relaxparameters read 
+ions read 
+relaxparameters read 
+done1 
+done1 
+done1 
+done1 
+done1 
+done1 
+[mpiexec@sglinux] Sending Ctrl-C to processes as requested
+[mpiexec@sglinux] Press Ctrl-C again to force abort
