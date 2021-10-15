@@ -1,0 +1,17 @@
+#!/bin/bash                                                                                                           
+# Begin LSF directives                                                                                                
+#BSUB -P GEN167                                                                                                       
+#BSUB -J Mg                                                                                                           
+#BSUB -o A4.stdout                                                                                                    
+#BSUB -W 00:10                                                                                                        
+#BSUB -nnodes 1                                                                                                       
+#End LSF directives and begin shell commands                                                                          
+export SQ_ROOT=$HOME/MiniApp
+cd $LS_SUBCWD
+module load gcc
+module load petsc
+echo starting sq
+date
+jsrun -n4 -a1 -g1 -c1 $SQ_ROOT/bin/sq -name Mg1 >A4_gcc.out
+echo sq finished
+date
