@@ -49,5 +49,7 @@ int main(int argc, char **argv)
     MPI_Barrier(MPI_COMM_WORLD);
      printf("Done LSSGQ \n");
     
+   PetscFinalize();
+   
   return 0;
 }
