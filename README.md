@@ -1,0 +1,3 @@
+# SQMiniApp
+make
+cd test
