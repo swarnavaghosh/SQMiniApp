@@ -30,7 +30,7 @@ PetscErrorCode Mult_HamiltonianVector(LSDFT_OBJ *pLsdft, Vec *V1, Vec *V2,int Kp
     int rank;
     PetscInt Xstart,Ystart,Zstart,Xend,Yend,Zend; // starting and ending nodes of the truncated hamiltonian
 
-    VecZeroEntries(pLsdft->VeffVktemp);
+    //    VecZeroEntries(pLsdft->VeffVktemp);
 
     Xstart=Ip-ceil(pLsdft->Rcut/pLsdft->delta_x);
     Xend=Ip+ceil(pLsdft->Rcut/pLsdft->delta_x);
@@ -53,7 +53,7 @@ PetscErrorCode Mult_HamiltonianVector(LSDFT_OBJ *pLsdft, Vec *V1, Vec *V2,int Kp
      // (Lap+Veff)*V1=V2                                                                                                                                                              
      MatMult(pLsdft->LapPlusVeffOprloc,*V1,*V2);
 
-     
+     /*     
      DMDAVecGetArray(pLsdft->daloc, *V1, &Varray);
     DMDAVecGetArray(pLsdft->daloc, *V2, &V2array);
 
@@ -161,7 +161,7 @@ PetscErrorCode Mult_HamiltonianVector(LSDFT_OBJ *pLsdft, Vec *V1, Vec *V2,int Kp
    
     DMDAVecRestoreArray(pLsdft->daloc, *V1, &Varray);
     DMDAVecRestoreArray(pLsdft->daloc, *V2, &V2array);
- 
+     */
     free(alpha);
     return ierr;
 }

@@ -209,7 +209,15 @@ PetscErrorCode Create_Objects(LSDFT_OBJ *pLsdft)
     VecDuplicate(pLsdft->Vk, &pLsdft->Tk);
     VecDuplicate(pLsdft->Vk, &pLsdft->Tkp1);
     VecDuplicate(pLsdft->Vk, &pLsdft->Tkm1);
-    
+    // added new
+    VecSetOptionsPrefix(pLsdft->Vk,"cuvec_");
+    VecSetOptionsPrefix(pLsdft->Vkm1,"cuvec_");
+    VecSetOptionsPrefix(pLsdft->Vkp1,"cuvec_");
+
+    VecSetFromOptions(pLsdft->Vk);
+    VecSetFromOptions(pLsdft->Vkm1);
+    VecSetFromOptions(pLsdft->Vkp1);
+
     // VecDuplicate(pLsdft->Vk, &pLsdft->VeffNodalBoundary);//todo
     //  DMCreateGlobalVector(pLsdft->daloccell, &pLsdft->VeffNodalBoundary);
     // printf("before gboundary\n");
@@ -460,6 +468,9 @@ PetscErrorCode Create_LaplacianLocal(LSDFT_OBJ *pLsdft)
      // duplicate the local laplacian                                                                                                                                                  
     MatDuplicate(pLsdft->LaplacianOprloc,MAT_COPY_VALUES,&pLsdft->LapPlusVeffOprloc);
     
+    MatSetOptionsPrefix(pLsdft->LapPlusVeffOprloc,"cumat_");
+    MatSetFromOptions(pLsdft->LapPlusVeffOprloc);
+
     return 0;
 }
 
