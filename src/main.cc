@@ -40,6 +40,9 @@ int main(int argc, char **argv)
     
       CalculateNonlocalProjectors(&lsdft);
     printf("Nonlocal projectors calculated\n");
+
+    NonlocalProjectors(&lsdft);
+    printf("rank=%d,NEW Nonlocal projectors calculated\n",rank);
     
     //MPI_Barrier(MPI_COMM_WORLD);
 

@@ -46,6 +46,17 @@ typedef struct {
     double ******Chi;           // nonlocal projectors, Chi_{Jlm}(i,j,k) 
 } PROJECTOR_OBJ;
 
+typedef struct {
+    double **Chi;           // nonlocal projectors, Chi_{Jlm}(i,j,k)
+  int **lId;
+  int **mId;
+  int **kId;
+  int **jId;
+  int **iId;
+  int *Ndim;
+} NEWPROJECTOR_OBJ;
+
+
 /*
  * structure storing the pseudopotential information 
  */
@@ -378,6 +389,7 @@ typedef struct {
     OVERLAP_OBJ *AtomOverlap_nonlocalforces;
     PROJECTOR_OBJ *Projector_nonlocal;
     PROJECTOR_OBJ *Projector_nonlocalforces;
+    NEWPROJECTOR_OBJ *ProjectorNonlocal;
 
   // data structures for preconditioner
   Mat HelmholtzOpr;

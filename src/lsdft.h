@@ -21,6 +21,9 @@
 #define ITMAXBRENTS 100
 #define EPSILON 1e-16
 
+int NonlocalProjectors(LSDFT_OBJ *pLsdft);
+int Mult_NonlocalVector(LSDFT_OBJ *pLsdft, Vec *V1, Vec *V2,int Kp, int Jp, int Ip);
+
 /*
  * initObjs.cc
  */

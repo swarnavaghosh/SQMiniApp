@@ -118,9 +118,10 @@ PetscScalar CalculateSpectralNodesAndWeights(LSDFT_OBJ *pLsdft, int p, int LIp,i
 
     VecSetValue(pLsdft->Vkm1, p, 1.0, INSERT_VALUES);   // index of p might be incorrect
     //     printf("value set in Vkm1, p=%d, LIp=%d \n",p,LIp);
-    //Mult_HamiltonianVector(pLsdft, &pLsdft->Vkm1, &pLsdft->Vk,Kp,Jp,Ip);
     MatMult(pLsdft->LapPlusVeffOprloc,pLsdft->Vkm1,pLsdft->Vk);
-     
+    //Mult_HamiltonianVector(pLsdft, &pLsdft->Vkm1, &pLsdft->Vk,Kp,Jp,Ip);
+    Mult_NonlocalVector(pLsdft, &pLsdft->Vkm1, &pLsdft->Vk,Kp,Jp,Ip);
+    
     //     printf("Hamiltonian Vector mult done \n");
     VecDot(pLsdft->Vkm1, pLsdft->Vk, &a[0]);
     //    printf("Here a\n");
@@ -134,8 +135,9 @@ PetscScalar CalculateSpectralNodesAndWeights(LSDFT_OBJ *pLsdft, int p, int LIp,i
      //   printf("rank=%d, a[%d]=%lf,b[%d]=%lf \n",rank,k,a[k],k,b[k]);      
 
     for (k = 0; k < N_qp; k++) {
-      //Mult_HamiltonianVector(pLsdft, &pLsdft->Vk, &pLsdft->Vkp1,Kp,Jp,Ip);  
-      MatMult(pLsdft->LapPlusVeffOprloc,pLsdft->Vk,pLsdft->Vkp1);  
+      MatMult(pLsdft->LapPlusVeffOprloc,pLsdft->Vk,pLsdft->Vkp1);
+      //Mult_HamiltonianVector(pLsdft, &pLsdft->Vk, &pLsdft->Vkp1,Kp,Jp,Ip);
+      Mult_NonlocalVector(pLsdft, &pLsdft->Vk, &pLsdft->Vkp1,Kp,Jp,Ip); 
       VecDot(pLsdft->Vk, pLsdft->Vkp1, &a[k + 1]);
         VecAXPY(pLsdft->Vkp1, -a[k + 1], pLsdft->Vk);
         VecAXPY(pLsdft->Vkp1, -b[k], pLsdft->Vkm1);
